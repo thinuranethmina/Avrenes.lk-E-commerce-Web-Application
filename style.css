@@ -1,0 +1,703 @@
+.background {
+    background-color: rgba(255, 255, 255, 0.600);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+}
+
+.bg {
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(91, 55, 189, 0.900));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@font-face {
+    font-family: Masque;
+    src: url("fonts/MASQUE__.ttf");
+}
+
+@font-face {
+    font-family: ABeeZee;
+    src: url("fonts/ABeeZee-Regular.otf");
+}
+
+* {
+    font-family: "ABeeZee";
+    font-size: 16px;
+}
+
+.title01 {
+    font-weight: 700;
+}
+
+.title02 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.title03 {
+    font-size: 20px;
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.600);
+}
+
+.tooltipText {
+    visibility: hidden;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    text-align: center;
+    margin-top: -3px;
+    border-radius: 6px;
+    padding: 2px 22px;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tip .tooltipText::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0) transparent transparent transparent;
+}
+
+.tip:hover .tooltipText {
+    visibility: visible;
+}
+
+
+/*-------------------------- CSS FOR TOGGLE BUTTON --------------------------*/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 38px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    box-shadow: 1px 5px 5px #000000;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "| | | | |";
+    text-align: center;
+    height: 29px;
+    width: 80px;
+    left: 4px;
+    bottom: 3px;
+    padding-top: 3px;
+    background-color: rgb(255, 229, 81);
+    transition: .7s;
+}
+
+input:checked+.slider {
+    background-color: #ffffff;
+}
+
+input:hover+.slider {
+    box-shadow: 1px 5px 15px #000000;
+}
+
+input:checked+.slider:before {
+    transform: translateX(109px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+    border: solid 2px black;
+}
+
+.slider.round:before {
+    border-radius: 34px;
+}
+
+
+/*-------------------------- END CSS FOR TOGGLE BUTTON --------------------------*/
+
+
+/*-------------------------- Modal --------------------------*/
+
+.modal1 {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 5%;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+
+.modal--content {
+    position: relative;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 1s
+}
+
+
+/* Add Animation */
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    color: white;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal--header {
+    padding: 2px 16px;
+    background-color: rgb(91, 55, 189);
+    color: rgb(255, 255, 255);
+}
+
+.modal--body {
+    padding: 2px 16px;
+    background-color: #fefefe;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #e6e6e6;
+    color: rgb(0, 0, 0);
+}
+
+
+/*-------------------------- Modal --------------------------*/
+
+.poster {
+    height: 450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo-img {
+    background-image: url("resources/logo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 53px;
+}
+
+.g-signIn {
+    width: 30px;
+    height: 30px;
+}
+
+
+/*-------------------------- Start card content--------------------------*/
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 345px;
+    perspective: 1000px;
+    border-radius: 5px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.flip-card-nontransform {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(-180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 5px;
+    line-height: normal;
+}
+
+.flip-card-back {
+    background-color: rgb(255, 255, 255);
+    transform: rotateY(180deg);
+    border-radius: 8px;
+}
+
+.card-img {
+    width: 100%;
+    height: 230px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-img-nontransform {
+    width: 150px;
+    height: 150px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-content {
+    border-color: rgba(0, 0, 255, 0.274);
+    border-style: solid;
+    border-width: 7px;
+    border-radius: 30px;
+}
+
+.category-title-1 {
+    color: black;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.title-4 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.badge-front {
+    position: absolute;
+    margin-left: -48%;
+    margin-top: 2%;
+    width: 70px;
+}
+
+.seeAll {
+    color: rgb(255, 72, 0);
+    font-weight: 700;
+}
+
+.viewItem {
+    background-color: #c695ca;
+    color: black;
+    height: 35px;
+    width: 100%;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.deliveryStatement {
+    position: absolute;
+    margin-top: 325px;
+    margin-left: 10%;
+}
+
+.viewItem:hover {
+    outline: black solid 2px;
+}
+
+.addToCart2 {
+    background-color: rgb(255, 238, 0);
+    color: black;
+    height: 35px;
+    width: 100%;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.addToCart2:hover {
+    outline: black solid 2px;
+}
+
+.addToCart {
+    background-color: rgb(230, 215, 13);
+    outline: black solid 2px;
+    color: black;
+    height: 35px;
+    width: 100%;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.addToCart:hover {
+    background-color: rgb(214, 200, 13);
+}
+
+.buyNow {
+    background-color: rgb(147, 246, 152);
+    outline: black solid 2px;
+    color: rgb(0, 0, 0);
+    height: 35px;
+    width: 100%;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.buyNow:hover {
+    background-color: rgb(117, 201, 122);
+}
+
+.buyNow2 {
+    background-color: rgb(147, 246, 152);
+    color: rgb(0, 0, 0);
+    height: 35px;
+    width: 100%;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.buyNow2:hover {
+    outline: black solid 2px;
+}
+
+.remove {
+    background-color: rgb(228, 13, 13);
+    outline: black solid 2px;
+    color: rgb(255, 255, 255);
+    height: 35px;
+    width: 100%;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.remove:hover {
+    background-color: rgb(192, 13, 13);
+}
+
+.discount {
+    position: absolute;
+    margin-left: -48%;
+    margin-top: 325px;
+    font-size: 14px;
+}
+
+.discountprice {
+    font-size: 12px;
+}
+
+@media (max-width:440px) {
+    .flip-card {
+        height: 375px;
+    }
+}
+
+@media (min-width: 575.98px) and (max-width: 768px) {
+    .flip-card {
+        height: 365px;
+    }
+}
+
+@media (min-width: 991.98px) and (max-width:1399.98px) {
+    .flip-card {
+        height: 365px;
+    }
+}
+
+
+/*-------------------------- End card content --------------------------*/
+
+.cards-content {
+    background-image: linear-gradient(to right, white, rgb(246, 245, 255), white);
+}
+
+.hr-1 {
+    border-style: solid;
+    border-width: 4px;
+    border-color: rgb(104, 103, 103);
+}
+
+.checkbox-ios {
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    margin-right: 5px;
+    position: relative;
+    vertical-align: middle;
+    font-size: 14px;
+    user-select: none;
+}
+
+.checkbox-ios .checkbox-ios-switch {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 56px;
+    height: 28px;
+    border-radius: 25%/50%;
+    vertical-align: top;
+    background: rgb(255, 0, 0);
+    transition: .2s;
+}
+
+.checkbox-ios .checkbox-ios-switch:before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    transition: .15s;
+}
+
+.checkbox-ios input[type=checkbox] {
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.checkbox-ios input[type=checkbox]:not(:disabled):active+.checkbox-ios-switch:before {
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, .3);
+}
+
+.checkbox-ios input[type=checkbox]:checked+.checkbox-ios-switch {
+    background: limegreen;
+}
+
+.checkbox-ios input[type=checkbox]:checked+.checkbox-ios-switch:before {
+    transform: translateX(28px);
+}
+
+
+/* Hover */
+
+.checkbox-ios input[type="checkbox"]:not(:disabled)+.checkbox-ios-switch {
+    cursor: pointer;
+    border: 3px solid rgba(0, 0, 0, 0.507);
+}
+
+
+/* Disabled */
+
+.checkbox-ios input[type=checkbox]:disabled+.checkbox-ios-switch {
+    filter: grayscale(70%);
+    border-color: rgba(0, 0, 0, .1);
+}
+
+.checkbox-ios input[type=checkbox]:disabled+.checkbox-ios-switch:before {
+    background: #eee;
+}
+
+
+/* Focus */
+
+.checkbox-ios.focused .checkbox-ios-switch:before {
+    box-shadow: inset 0px 0px 4px #ff5623;
+}
+
+
+/* ------------------------- snack bar ------------------------- */
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: rgb(139, 28, 183);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 5;
+    bottom: 30px;
+    font-size: 17px;
+    border: rgb(17, 3, 39) 5px solid;
+    border-radius: 2px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 9.5s;
+    animation: fadein 0.5s, fadeout 0.5s 9.5s;
+}
+
+#snackbar.hide {
+    visibility: visible;
+    min-width: 250px;
+    margin: auto;
+    background-color: rgb(139, 28, 183);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 5;
+    bottom: 30px;
+    font-size: 17px;
+    animation: fadeout2 0.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: -30px;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: -30px;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: -30px;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: -30px;
+        opacity: 0;
+    }
+}
+
+#snackbarbtn {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: rgb(139, 28, 183);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 5;
+    bottom: 30px;
+    font-size: 17px;
+    border: rgb(17, 3, 39) 5px solid;
+    border-radius: 2px;
+}
+
+#snackbarbtn.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 9.5s;
+}
+
+#snackbarbtn.hide {
+    visibility: visible;
+    min-width: 250px;
+    margin: auto;
+    background-color: rgb(139, 28, 183);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 5;
+    bottom: 30px;
+    font-size: 17px;
+    animation: fadeout2 0.5s;
+    border: rgb(47, 6, 109) 5px solid;
+    border-radius: 2px;
+}
+
+@keyframes fadeout2 {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: -30px;
+        opacity: 0;
+    }
+}
